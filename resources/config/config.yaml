@@ -1,0 +1,27 @@
+app:
+  port: 8050
+  root: "."
+  dataRoot: "."
+  lang: "eng" # "rus"
+
+db:
+  path: "db/data.db"
+  spkSuffix: "001"  # Разработка
+
+images:
+  runsFolder: "runs"
+
+auth:
+  credentials: # basic auth
+    login: admin
+    password: admin
+
+log:
+  level: DEBUG # NOTSET, DEBUG, INFO, WARN, ERROR, CRITICAL
+  logDirectory: "./logs" # Наличие этой строки автоматически разрешает логирование в файлы
+  rotation:  # Наличие этого блока разрешает ротацию логов
+    when: "m"
+    interval: 5
+    keepFiles: 20
+    archiving:
+      transferDirectory: "./logs/old" # Архивированные логи можно переместить
